@@ -61,6 +61,7 @@ Deflate, PackBits y LZW.
   procesan desde ahí; los resultados van a `output/` en el directorio externo
   específico de la app (no requiere permisos de almacenamiento).
 - Nada se sube a ningún servidor.
+- **Política de privacidad completa:** <https://andrespar2.github.io/ParDocs/privacy-policy.html>
 
 ## Arquitectura
 
@@ -88,20 +89,42 @@ app/src/main/java/com/pardocs/app/
 
 ## Compilar
 
-Requisitos: JDK 17, Android SDK (platform 35, build-tools 35.0.0).
+Requisitos: JDK 17, Android SDK (platform 36, build-tools 36.0.0).
 
 ```bash
 # Para depuración (app: com.pardocs.app.debug)
 ./gradlew.bat :app:assembleDebug
 
-# Para publicación (firma con el keystore de desarrollo incluido)
-./gradlew.bat :app:assembleRelease
-# APK universal: app/build/outputs/apk/release/app-release.apk
+# Para publicación: AAB (Google Play) + APK universal (GitHub Releases)
+./gradlew.bat :app:bundleRelease :app:assembleRelease
+# AAB: app/build/outputs/bundle/release/app-release.aab
+# APK: app/build/outputs/apk/release/app-release.apk
 ```
 
-La firma de *release* usa `keystore.properties` + `pardocs-dev.keystore`
-(incluidos para que la construcción sea reproducible). **Antes de publicar en
-una tienda, genera tu propio keystore** y actualiza ambos archivos.
+### Firma de publicación (Google Play)
+
+El build de *release* resuelve la firma del **primer** archivo que exista:
+
+1. `keystore.properties.local` — **tu clave privada de producción** (ignorada por git).
+2. `keystore.properties` — clave de **desarrollo** incluida para que el build sea
+   reproducible sin configurar nada. **No la uses para Play**: tanto su contraseña
+   como `pardocs-dev.keystore` están en el repositorio público.
+
+Para generar una clave de producción nueva:
+
+```powershell
+# Crea el .jks fuera del repositorio y las credenciales en keystore.properties.local
+./tools/generate-release-keystore.ps1
+```
+
+El script genera una contraseña aleatoria fuerte y guarda el keystore en
+`%USERPROFILE%\pardocs-signing\pardocs-release.jks`. **Haz copia de seguridad
+del `.jks` y de `keystore.properties.local`** (o de la contraseña): si pierdes la
+clave no podrás publicar actualizaciones. Se recomienda activar *Google Play App
+Signing* y subir este keystore como *upload key*.
+
+> `keystore.properties.local` ya está en `.gitignore`. **Nunca** subas el keystore
+> ni las contraseñas a GitHub.
 
 ### Tests
 

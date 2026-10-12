@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>ParDocs · Privacidad</title>
+<meta name="description" content="ParDocs: gestión de PDF, imágenes y documentos 100 % sin conexión. Sin permisos, sin recopilación de datos." />
+<meta name="theme-color" content="#000000" />
+<style>
+  :root{
+    --black:#000;--ink:#0a0a0e;--surface:#101016;--violet:#9b7bff;--violet-bright:#b9a5ff;
+    --violet-deep:#2a2140;--teal:#00c9a2;--text:#f4f2ff;--text-2:#b0abbf;--text-3:#7b768a;--hairline:#1e1e26;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:var(--black);color:var(--text);padding:28px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .glow{position:fixed;inset:0;pointer-events:none;
+    background:radial-gradient(600px 320px at 75% -5%,rgba(155,123,255,.20),transparent 70%),
+               radial-gradient(520px 280px at -10% 15%,rgba(0,201,162,.10),transparent 70%);}
+  .box{position:relative;max-width:560px;width:100%;text-align:center;
+    background:linear-gradient(180deg,var(--surface),var(--ink));
+    border:1px solid var(--hairline);border-radius:22px;padding:44px 28px;
+    box-shadow:0 30px 80px -50px rgba(155,123,255,.9);}
+  .badge{width:84px;height:84px;margin:0 auto 22px;border-radius:24px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(160deg,var(--violet-deep),#000);border:1px solid var(--hairline);
+    box-shadow:0 0 0 1px rgba(155,123,255,.16),0 18px 50px -18px rgba(155,123,255,.55);}
+  h1{margin:0 0 10px;font-size:clamp(1.7rem,6vw,2.3rem);letter-spacing:-.02em;font-weight:800}
+  p{margin:0 auto 24px;color:var(--text-2);max-width:44ch}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:13px;font-weight:600;
+    color:var(--text);text-decoration:none;background:linear-gradient(160deg,var(--violet),#6f52e0);
+    border:1px solid rgba(185,165,255,.5);box-shadow:0 16px 40px -18px rgba(155,123,255,.85);}
+  .btn:hover{filter:brightness(1.07)}
+  .foot{color:var(--text-3);font-size:.82rem;margin-top:26px}
+  .foot a{color:var(--text-2)}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<main class="box">
+  <div class="badge" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2.6 4.6 5.6v5.6c0 4.5 3.1 8.6 7.4 9.6 4.3-1 7.4-5.1 7.4-9.6V5.6L12 2.6Z" stroke="#b9a5ff" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="m8.6 12.1 2.3 2.3 4.5-4.6" stroke="#00c9a2" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <h1>ParDocs</h1>
+  <p>Gestión de PDF, imágenes y documentos <strong>100&nbsp;% sin conexión</strong>. Sin permisos, sin recopilación de datos.</p>
+  <a class="btn" href="privacy-policy.html">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 2.6 4.6 5.6v5.6c0 4.5 3.1 8.6 7.4 9.6 4.3-1 7.4-5.1 7.4-9.6V5.6L12 2.6Z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+    Ver política de privacidad
+  </a>
+  <p class="foot">Desarrollado por andrespar2 · <span>© 2026</span></p>
+</main>
+</body>
+</html>

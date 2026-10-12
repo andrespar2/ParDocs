@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Política de Privacidad · ParDocs</title>
+<meta name="description" content="Política de privacidad de ParDocs, la app Android 100 % sin conexión para gestionar PDF, imágenes y documentos. No recopila ni comparte ningún dato." />
+<meta name="theme-color" content="#000000" />
+<meta name="robots" content="index, follow" />
+<style>
+  :root{
+    --black:#000000;
+    --ink:#0a0a0e;
+    --surface:#101016;
+    --surface-tint:#17171f;
+    --violet:#9b7bff;
+    --violet-bright:#b9a5ff;
+    --violet-deep:#2a2140;
+    --teal:#00c9a2;
+    --text:#f4f2ff;
+    --text-2:#b0abbf;
+    --text-3:#7b768a;
+    --hairline:#1e1e26;
+    --radius:18px;
+    --maxw:820px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--black);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:var(--violet-bright);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .glow{
+    position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(600px 300px at 80% -5%, rgba(155,123,255,.18), transparent 70%),
+      radial-gradient(500px 260px at -10% 8%, rgba(0,201,162,.10), transparent 70%);
+  }
+  header.hero{position:relative;z-index:1;padding:64px 0 28px;text-align:center}
+  .badge{
+    width:76px;height:76px;margin:0 auto 20px;border-radius:22px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(160deg,var(--violet-deep),#000);
+    border:1px solid var(--hairline);
+    box-shadow:0 0 0 1px rgba(155,123,255,.16), 0 18px 50px -18px rgba(155,123,255,.55);
+  }
+  .badge svg{width:40px;height:40px;display:block}
+  h1{margin:0 0 8px;font-size:clamp(1.7rem,5vw,2.4rem);letter-spacing:-.02em;font-weight:800}
+  .sub{color:var(--text-2);margin:0;font-size:1rem}
+  .meta{color:var(--text-3);font-size:.85rem;margin-top:14px}
+  main{position:relative;z-index:1;padding:8px 0 40px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 40px}
+  .chip{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:8px 14px;border-radius:999px;font-size:.86rem;color:var(--text-2);
+    background:var(--ink);border:1px solid var(--hairline);
+  }
+  .chip b{color:var(--text)}
+  .chip .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal)}
+  .card{
+    background:linear-gradient(180deg,var(--surface),var(--ink));
+    border:1px solid var(--hairline);border-radius:var(--radius);
+    padding:26px 24px;margin:18px 0;
+  }
+  .card.accent{border-color:rgba(155,123,255,.35);box-shadow:0 24px 60px -40px rgba(155,123,255,.8)}
+  h2{font-size:1.18rem;margin:0 0 12px;letter-spacing:-.01em;display:flex;align-items:center;gap:12px}
+  h2 .n{
+    flex:0 0 auto;width:28px;height:28px;border-radius:9px;font-size:.85rem;
+    display:inline-flex;align-items:center;justify-content:center;
+    background:var(--violet-deep);color:var(--violet-bright);font-weight:700;
+    border:1px solid rgba(155,123,255,.35);
+  }
+  p{margin:0 0 12px;color:var(--text-2)}
+  p strong,li strong{color:var(--text)}
+  ul{margin:6px 0 12px;padding-left:0;list-style:none}
+  li{position:relative;padding-left:26px;margin:8px 0;color:var(--text-2)}
+  li::before{
+    content:"";position:absolute;left:4px;top:.62em;width:7px;height:7px;border-radius:50%;
+    background:var(--violet);box-shadow:0 0 10px rgba(155,123,255,.7);
+  }
+  li.no::before{background:var(--teal);box-shadow:0 0 10px rgba(0,201,162,.7)}
+  .callout{
+    display:flex;gap:14px;align-items:flex-start;
+    background:rgba(0,201,162,.06);border:1px solid rgba(0,201,162,.28);
+    border-radius:14px;padding:16px 18px;margin:6px 0 4px;
+  }
+  .callout svg{flex:0 0 auto;width:22px;height:22px;margin-top:2px}
+  .callout p{margin:0;color:var(--text)}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:4px 0 0}
+  .kv dt{color:var(--text-3);font-size:.9rem}
+  .kv dd{margin:0;color:var(--text);font-size:.95rem;overflow-wrap:anywhere}
+  footer{position:relative;z-index:1;border-top:1px solid var(--hairline);padding:28px 0 60px;text-align:center;color:var(--text-3);font-size:.85rem}
+  footer a{color:var(--text-2)}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;margin-top:8px;
+    padding:12px 20px;border-radius:12px;font-weight:600;color:var(--text);
+    background:linear-gradient(160deg,var(--violet),#6f52e0);
+    border:1px solid rgba(185,165,255,.5);box-shadow:0 16px 40px -18px rgba(155,123,255,.85);
+  }
+  .btn:hover{text-decoration:none;filter:brightness(1.06)}
+  @media (max-width:520px){
+    .card{padding:22px 18px}
+    header.hero{padding:48px 0 20px}
+    .kv{grid-template-columns:1fr}
+    .kv dt{color:var(--text-2)}
+  }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.6 4.6 5.6v5.6c0 4.5 3.1 8.6 7.4 9.6 4.3-1 7.4-5.1 7.4-9.6V5.6L12 2.6Z"
+              stroke="#b9a5ff" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="m8.6 12.1 2.3 2.3 4.5-4.6" stroke="#00c9a2" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1>Política de Privacidad</h1>
+    <p class="sub">Aplicación <strong>ParDocs</strong> para Android</p>
+    <p class="meta">Última actualización: 12 de octubre de 2026</p>
+
+    <div class="chips">
+      <span class="chip"><span class="dot"></span><b>100&nbsp;%</b> sin conexión</span>
+      <span class="chip"><span class="dot"></span><b>0</b> permisos</span>
+      <span class="chip"><span class="dot"></span><b>0</b> datos recopilados</span>
+      <span class="chip"><span class="dot"></span><b>0</b> rastreadores</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="card accent">
+    <h2><span class="n">✓</span>En una frase</h2>
+    <div class="callout">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 2.6 4.6 5.6v5.6c0 4.5 3.1 8.6 7.4 9.6 4.3-1 7.4-5.1 7.4-9.6V5.6L12 2.6Z"
+              stroke="#00c9a2" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="m8.6 12.1 2.3 2.3 4.5-4.6" stroke="#00c9a2" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p><strong>ParDocs funciona íntegramente en tu dispositivo.</strong> No recopilamos,
+      almacenamos, transmitimos ni compartimos ningún dato personal. Tus archivos nunca salen
+      de tu teléfono.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">1</span>Quiénes somos</h2>
+    <dl class="kv">
+      <dt>Aplicación</dt><dd>ParDocs (paquete <code>com.pardocs.app</code>)</dd>
+      <dt>Desarrollador</dt><dd>andrespar2</dd>
+      <dt>Cuenta de publicación</dt><dd>Virginia Studios (Google Play)</dd>
+      <dt>Contacto</dt><dd><a href="mailto:virginiastudios2026@gmail.com">virginiastudios2026@gmail.com</a></dd>
+      <dt>Plataforma</dt><dd>Android (Google Play y APK en GitHub Releases)</dd>
+    </dl>
+    <p style="margin-top:14px">Esta política describe cómo la aplicación ParDocs trata la
+    información cuando la usas. Al instalar y usar ParDocs aceptas lo aquí descrito.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">2</span>Qué hace ParDocs con tus archivos</h2>
+    <p>ParDocs es una herramienta local para gestionar PDF, imágenes y documentos. Toda la
+    conversión y el procesamiento ocurre <strong>dentro de tu dispositivo</strong>.</p>
+    <ul>
+      <li><strong>Archivos que eliges:</strong> cuando seleccionas un PDF, una imagen o un
+      documento, la app hace una copia temporal en su <em>almacenamiento privado interno</em>
+      (caché) y la procesa ahí mismo.</li>
+      <li><strong>Resultados:</strong> los archivos generados se guardan en el
+      <em>almacenamiento privado de la aplicación</em> (<code>getExternalFilesDir/output</code>),
+      una carpeta propia de ParDocs a la que puedes acceder desde el gestor de archivos.</li>
+      <li><strong>Metadatos (EXIF):</strong> si usas las herramientas de metadatos, la app lee
+      o elimina información EXIF de tus imágenes localmente (cámara, fecha, GPS, autor).</li>
+    </ul>
+    <p>En ningún caso esos archivos o sus contenidos se envían a un servidor ni a terceros.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">3</span>Datos que <u>no</u> recopilamos</h2>
+    <ul>
+      <li class="no">No recopilamos datos personales (nombre, correo, teléfono…).</li>
+      <li class="no">No recopilamos datos de uso, estadísticas ni telemetría.</li>
+      <li class="no">No usamos <em>analytics</em>, publicidad ni informes de fallos (crash reporting).</li>
+      <li class="no">No accedemos a tu ubicación, contactos, cámara, micrófono ni agenda.</li>
+      <li class="no">No creamos cuentas ni pedimos registro para usar la app.</li>
+      <li class="no">No usamos cookies ni identificadores de seguimiento.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">4</span>Permisos y acceso al dispositivo</h2>
+    <p>ParDocs <strong>no solicita ningún permiso sensible</strong> de Android. En concreto:</p>
+    <ul>
+      <li>No declara el permiso de <strong>Internet</strong> (<code>android.permission.INTERNET</code>).</li>
+      <li>No pide permisos de <strong>almacenamiento</strong>: guarda sus resultados en su carpeta
+      privada, que no requiere permisos.</li>
+      <li>No pide acceso a cámara, ubicación, micrófono, contactos ni SMS.</li>
+    </ul>
+    <p>Accedes a tus archivos únicamente a través del selector del sistema, y solo sobre los
+    archivos que tú eliges de forma explícita.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">5</span>Conexiones de red</h2>
+    <p><strong>ParDocs no se conecta a Internet.</strong> Al no tener permiso de red, la app es
+    incapaz por diseño de enviar o recibir información. La vista integrada que se usa para
+    convertir documentos HTML a PDF procesa el contenido local y tiene el acceso a red
+    deshabilitado. Por tanto, no hay transmisión de datos a servidores propios ni de terceros.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">6</span>Almacenamiento, conservación y eliminación</h2>
+    <ul>
+      <li>Los <strong>archivos temporales</strong> (caché) se pueden eliminar al cerrar una tarea
+      o al limpiar la caché desde Android.</li>
+      <li>Los <strong>resultados</strong> permanecen en la carpeta privada de ParDocs hasta que
+      los borres manualmente o <strong>desinstales la aplicación</strong>.</li>
+      <li><strong>Copias de seguridad desactivadas:</strong> la app no incluye sus datos en
+      copias de seguridad en la nube ni en transferencias entre dispositivos, de modo que nada
+      se sincroniza fuera del teléfono.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">7</span>Compartir con terceros</h2>
+    <p>No vendemos, alquilamos ni compartimos información con terceros, porque
+    <strong>no recopilamos ninguna</strong>. Si decides <em>compartir</em> o <em>abrir</em> un
+    resultado, la propia app no lo envía: es el mecanismo estándar de Android
+    (FileProvider) el que entrega el archivo a la aplicación que tú elijas. Esa aplicación
+    se rige por su propia política de privacidad.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">8</span>Distribución en tiendas y repositorios</h2>
+    <p>ParDocs se distribuye a través de <strong>Google Play</strong> (bajo la cuenta de
+    publicación <em>Virginia Studios</em>) y como APK en <strong>GitHub Releases</strong>.
+    Estas plataformas pueden tratar datos técnicos (por ejemplo, descargas o instalaciones)
+    conforme a <strong>sus propias políticas de privacidad</strong>. ParDocs no envía a esas
+    plataformas ningún dato de los que tratas dentro de la app.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">9</span>Menores de edad</h2>
+    <p>ParDocs no está dirigida específicamente a menores de 13 años y no recopila datos
+    de ninguna persona, independientemente de su edad.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">10</span>Seguridad</h2>
+    <p>El procesamiento local y la ausencia de conexiones de red reducen el riesgo de
+    exposición: la información sensible de tus documentos nunca abandona tu dispositivo.
+    Te recomendamos mantener Android actualizado y proteger tu dispositivo con bloqueo de
+    pantalla.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">11</span>Cambios en esta política</h2>
+    <p>Podemos actualizar esta política si cambian las funciones de la app o la normativa.
+    Publicaremos siempre la versión vigente en esta misma dirección, con su fecha de
+    actualización. Si algún cambio implicara recopilación de datos (algo que ParDocs no hace
+    en la actualidad), lo anunciaremos de forma clara antes de aplicarlo.</p>
+  </section>
+
+  <section class="card accent">
+    <h2><span class="n">✉</span>Contacto</h2>
+    <p>Si tienes dudas sobre esta política o sobre el tratamiento de datos, escríbenos:</p>
+    <p><a class="btn" href="mailto:virginiastudios2026@gmail.com">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M3 6.5h18v11H3z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="m3.5 7 8.5 6 8.5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      virginiastudios2026@gmail.com</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>ParDocs · Desarrollado por andrespar2 · Publicado en Google Play por Virginia Studios</p>
+    <p>Esta página no usa cookies ni scripts de terceros. · <span>© 2026</span></p>
+  </div>
+</footer>
+
+</body>
+</html>

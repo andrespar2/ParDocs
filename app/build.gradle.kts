@@ -6,11 +6,16 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
-// Optional release signing. The development keystore ships with the project so
-// that `assembleRelease` is reproducible out of the box.
-val keystorePropertiesFile = rootProject.file("keystore.properties")
+// Release signing. Resolved from the first file that exists, in order:
+//   1. keystore.properties.local -- your PRIVATE production key (git-ignored).
+//   2. keystore.properties       -- development key shipped so that a release
+//                                   build is reproducible out of the box.
+// The production key and its passwords must NEVER be committed to the repo.
+val keystorePropertiesFile = listOf("keystore.properties.local", "keystore.properties")
+    .map { rootProject.file(it) }
+    .firstOrNull { it.exists() }
 val keystoreProperties = Properties().apply {
-    if (keystorePropertiesFile.exists()) {
+    if (keystorePropertiesFile != null) {
         keystorePropertiesFile.inputStream().use { load(it) }
     }
 }
@@ -18,14 +23,14 @@ val hasReleaseKeystore = keystoreProperties.getProperty("storeFile") != null
 
 android {
     namespace = "com.pardocs.app"
-    compileSdk = 35
-    buildToolsVersion = "35.0.0"
+    compileSdk = 36
+    buildToolsVersion = "36.0.0"
 
     defaultConfig {
         applicationId = "com.pardocs.app"
         minSdk = 26
-        targetSdk = 35
-        versionCode = 1
+        targetSdk = 36
+        versionCode = 2
         versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

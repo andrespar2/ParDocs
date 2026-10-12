@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Back sheet, suggests "multiple documents" -->
+    <path
+        android:fillColor="#4A3A80"
+        android:pathData="M42,18 h18 l14,14 v44 a4,4 0 0 1 -4,4 h-28 a4,4 0 0 1 -4,-4 v-54 a4,4 0 0 1 4,-4 z" />
+    <path
+        android:fillColor="#6B54C4"
+        android:pathData="M60,18 l14,14 h-14 z" />
+
+    <!-- Front page -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,32 a4,4 0 0 1 4,-4 h18 l12,12 v40 a4,4 0 0 1 -4,4 h-26 a4,4 0 0 1 -4,-4 z" />
+    <path
+        android:fillColor="#C9BCFF"
+        android:pathData="M54,28 l12,12 h-12 z" />
+
+    <!-- Accent bars -->
+    <path
+        android:fillColor="#7B5BFF"
+        android:pathData="M40,50 h18 v4 h-18 z" />
+    <path
+        android:fillColor="#9B7BFF"
+        android:pathData="M40,60 h18 v4 h-18 z" />
+    <path
+        android:fillColor="#B9A5FF"
+        android:pathData="M40,70 h10 v4 h-10 z" />
+</vector>

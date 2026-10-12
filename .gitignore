@@ -1,0 +1,23 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android / IDE
+local.properties
+*.iml
+.idea/
+.cxx/
+captures/
+.externalNativeBuild/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Signing (local secrets). The development keystore is committed intentionally
+# so that builds are reproducible; see README for details.
+keystore.properties.local
+
+# Local build helpers (machine-specific JDK/SDK paths).
+.build-env.ps1

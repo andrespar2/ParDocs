@@ -1,8 +1,9 @@
 # ParDocs
 
 Aplicación Android 100 % local para gestionar PDF, imágenes y documentos.
-Inspirada en iLovePDF pero **sin conexión a internet**: todos los archivos se
-procesan en el dispositivo. Privacidad primero: la app no tiene permiso de red.
+Inspirada en iLovePDF: todos los archivos se procesan en el dispositivo.
+Privacidad primero: tus documentos nunca salen del teléfono. La única conexión a
+Internet se usa para mostrar el banner publicitario de Google AdMob (inicio).
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-blueviolet)](https://kotlinlang.org)
 [![API](https://img.shields.io/badge/minSdk-26-green)](https://developer.android.com/tools/releases/platforms)
@@ -56,12 +57,25 @@ Deflate, PackBits y LZW.
 
 ## Privacidad
 
-- **Sin permiso `INTERNET`.** El procesamiento es íntegramente local.
+- **Procesamiento 100 % local.** Todos tus archivos se tratan en el dispositivo:
+  nada de su contenido se sube a ningún servidor.
+- **Permiso `INTERNET`:** se declara **únicamente** para que el SDK de Google
+  AdMob descargue el banner de la pantalla de inicio. Si no hay red, la app
+  funciona igual (el banner simplemente no se muestra).
 - Los archivos importados se copian al espacio privado de la app (`cache`) y se
   procesan desde ahí; los resultados van a `output/` en el directorio externo
   específico de la app (no requiere permisos de almacenamiento).
-- Nada se sube a ningún servidor.
 - **Política de privacidad completa:** <https://andrespar2.github.io/ParDocs/privacy-policy.html>
+
+## Publicidad (Google AdMob)
+
+- Formato único: **banner adaptable anclado** (`AnchoredAdaptiveBanner`), solo en
+  la pantalla de inicio y en la parte inferior. Nunca cubre botones ni documentos.
+- Sin intersticiales, recompensados ni anuncios de inicio.
+- `debug` usa los identificadores **de prueba** oficiales de Google; `release` usa
+  los identificadores reales de ParDocs (ver `app/build.gradle.kts`).
+- Consentimiento gestionado con **Google User Messaging Platform (UMP)**; cuando
+  la normativa lo exige, aparece la entrada "Opciones de privacidad" en Ajustes.
 
 ## Arquitectura
 
@@ -77,9 +91,12 @@ Deflate, PackBits y LZW.
 - **Metadatos EXIF:** `androidx.exifinterface`.
 - **Office:** extracción de texto OOXML con `XmlPullParser` (sin librerías
   pesadas).
+- **Publicidad:** Google Mobile Ads / AdMob (`play-services-ads`) con banner
+  adaptable anclado y `user-messaging-platform` (UMP) para el consentimiento.
 
 ```
 app/src/main/java/com/pardocs/app/
+├── ads/      Inicialización de AdMob y consentimiento (UMP)
 ├── core/     Modelo de archivos, formatos, almacenamiento, rangos de página
 ├── engine/   Motores (PDF, imágenes, EXIF, office, texto) y codecs BMP/TIFF
 ├── tools/    Catálogo de las 16 herramientas

@@ -2,9 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
-      ParDocs works entirely offline. It deliberately requests NO network
-      permission: every operation runs locally on the device.
+      ParDocs processes every document locally on the device; no file is ever
+      uploaded. The INTERNET permission is requested EXCLUSIVELY by the Google
+      AdMob SDK (via Google Mobile Ads) to fetch the home-screen banner ad.
+      ACCESS_NETWORK_STATE lets the ads SDK know whether a connection exists.
+
+      The app keeps working normally when there is no network, no consent or no
+      ad inventory: the banner simply is not shown.
     -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".ParDocsApp"
@@ -18,6 +25,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ParDocs">
+
+        <!--
+          AdMob application ID. Resolved per build type from build.gradle.kts:
+          debug -> Google official test App ID, release -> real ParDocs App ID.
+          Missing/incorrect value makes the SDK crash with "Missing application ID".
+        -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="${admobAppId}" />
 
         <activity
             android:name=".MainActivity"

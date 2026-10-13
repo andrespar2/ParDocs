@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Política de Privacidad · ParDocs</title>
-<meta name="description" content="Política de privacidad de ParDocs, la app Android 100 % sin conexión para gestionar PDF, imágenes y documentos. No recopila ni comparte ningún dato." />
+<meta name="description" content="Política de privacidad de ParDocs, la app Android para gestionar PDF, imágenes y documentos con procesamiento 100 % local y un único banner publicitario de Google AdMob en la pantalla de inicio." />
 <meta name="theme-color" content="#000000" />
 <meta name="robots" content="index, follow" />
 <style>
@@ -129,13 +129,13 @@
     </div>
     <h1>Política de Privacidad</h1>
     <p class="sub">Aplicación <strong>ParDocs</strong> para Android</p>
-    <p class="meta">Última actualización: 12 de octubre de 2026</p>
+    <p class="meta">Última actualización: 13 de octubre de 2026</p>
 
     <div class="chips">
-      <span class="chip"><span class="dot"></span><b>100&nbsp;%</b> sin conexión</span>
-      <span class="chip"><span class="dot"></span><b>0</b> permisos</span>
-      <span class="chip"><span class="dot"></span><b>0</b> datos recopilados</span>
-      <span class="chip"><span class="dot"></span><b>0</b> rastreadores</span>
+      <span class="chip"><span class="dot"></span><b>100&nbsp;%</b> procesado local</span>
+      <span class="chip"><span class="dot"></span><b>0</b> permisos sensibles</span>
+      <span class="chip"><span class="dot"></span><b>0</b> cuentas ni registros</span>
+      <span class="chip"><span class="dot"></span><b>1</b> banner con consentimiento</span>
     </div>
   </div>
 </header>
@@ -151,9 +151,10 @@
         <path d="m8.6 12.1 2.3 2.3 4.5-4.6" stroke="#00c9a2" stroke-width="1.7"
               stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <p><strong>ParDocs funciona íntegramente en tu dispositivo.</strong> No recopilamos,
-      almacenamos, transmitimos ni compartimos ningún dato personal. Tus archivos nunca salen
-      de tu teléfono.</p>
+      <p><strong>ParDocs procesa todo en tu dispositivo.</strong> Tus archivos y documentos
+      nunca salen de tu teléfono y la app no crea cuentas ni recopila datos personales. La
+      única excepción es el <strong>banner publicitario de Google AdMob</strong> que aparece en
+      la pantalla de inicio y que se detalla en la sección 7.</p>
     </div>
   </section>
 
@@ -192,18 +193,24 @@
     <ul>
       <li class="no">No recopilamos datos personales (nombre, correo, teléfono…).</li>
       <li class="no">No recopilamos datos de uso, estadísticas ni telemetría.</li>
-      <li class="no">No usamos <em>analytics</em>, publicidad ni informes de fallos (crash reporting).</li>
+      <li class="no">No usamos <em>analytics</em> ni informes de fallos (crash reporting) propios.</li>
       <li class="no">No accedemos a tu ubicación, contactos, cámara, micrófono ni agenda.</li>
       <li class="no">No creamos cuentas ni pedimos registro para usar la app.</li>
-      <li class="no">No usamos cookies ni identificadores de seguimiento.</li>
+      <li class="no">No usamos cookies propias ni identificadores para elaborar perfiles. El
+      único tratamiento externo es el del banner publicitario de Google AdMob, descrito en la
+      sección 7.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2><span class="n">4</span>Permisos y acceso al dispositivo</h2>
-    <p>ParDocs <strong>no solicita ningún permiso sensible</strong> de Android. En concreto:</p>
+    <p>ParDocs <strong>no solicita ningún permiso sensible</strong> (de los que requieren tu
+    autorización explícita) de Android. En concreto:</p>
     <ul>
-      <li>No declara el permiso de <strong>Internet</strong> (<code>android.permission.INTERNET</code>).</li>
+      <li>Declara únicamente los permisos normales de <strong>red</strong>
+      (<code>android.permission.INTERNET</code> y
+      <code>android.permission.ACCESS_NETWORK_STATE</code>), que necesita el banner
+      publicitario. No dan acceso a tus archivos ni a datos personales.</li>
       <li>No pide permisos de <strong>almacenamiento</strong>: guarda sus resultados en su carpeta
       privada, que no requiere permisos.</li>
       <li>No pide acceso a cámara, ubicación, micrófono, contactos ni SMS.</li>
@@ -214,10 +221,11 @@
 
   <section class="card">
     <h2><span class="n">5</span>Conexiones de red</h2>
-    <p><strong>ParDocs no se conecta a Internet.</strong> Al no tener permiso de red, la app es
-    incapaz por diseño de enviar o recibir información. La vista integrada que se usa para
-    convertir documentos HTML a PDF procesa el contenido local y tiene el acceso a red
-    deshabilitado. Por tanto, no hay transmisión de datos a servidores propios ni de terceros.</p>
+    <p>La app <strong>no envía tus archivos ni su contenido a ningún servidor</strong>: todo el
+    procesamiento (incluida la vista que convierte HTML a PDF) ocurre en local con el acceso a
+    red deshabilitado. La <strong>única</strong> conexión a Internet de ParDocs es la que hace
+    el SDK de anuncios para descargar el banner de Google AdMob descrito en la sección 7.
+    ParDocs no tiene servidores propios ni transmite datos a terceros por su cuenta.</p>
   </section>
 
   <section class="card">
@@ -234,16 +242,60 @@
   </section>
 
   <section class="card">
-    <h2><span class="n">7</span>Compartir con terceros</h2>
-    <p>No vendemos, alquilamos ni compartimos información con terceros, porque
-    <strong>no recopilamos ninguna</strong>. Si decides <em>compartir</em> o <em>abrir</em> un
+    <h2><span class="n">7</span>Publicidad y consentimiento (Google AdMob)</h2>
+    <p>Para poder mantener la app gratuita, ParDocs muestra <strong>un único anuncio de
+    banner</strong> (un banner adaptativo anclado) en la parte inferior de la
+    <strong>pantalla de inicio</strong>. No usamos anuncios interstitial, recompensados
+    (<em>rewarded</em>) ni de apertura (<em>app open</em>), y no mostramos publicidad en ninguna
+    otra pantalla.</p>
+    <p>Los anuncios los sirve <strong>Google AdMob</strong> a través del Google Mobile Ads SDK.
+    Para cargar el banner la app declara el permiso normal
+    <code>com.google.android.gms.permission.AD_ID</code> y puede conectarse a los servidores de
+    Google. El SDK de anuncios puede tratar los siguientes datos:</p>
+    <ul>
+      <li>el <strong>identificador de publicidad</strong> de Android (Advertising ID) y otros
+      identificadores del dispositivo;</li>
+      <li>datos <strong>técnicos y de diagnóstico</strong> (modelo, sistema operativo, idioma,
+      dirección IP aproximada y datos de rendimiento del anuncio);</li>
+      <li>información sobre <strong>las interacciones con el anuncio</strong> (impresiones y
+      clics).</li>
+    </ul>
+    <p>Estos datos los trata <strong>Google</strong> conforme a sus propias políticas:
+    <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Política de
+    Privacidad de Google</a> y
+    <a href="https://policies.google.com/technologies/ads" rel="noopener" target="_blank">Cómo
+    usa Google los datos de los socios</a>. ParDocs <strong>no recibe ni almacena</strong> esos
+    datos de forma individualizada ni los asocia a tus documentos.</p>
+    <p>Antes de cargar el primer anuncio, la app usa la <strong>plataforma de mensajes de
+    usuarios (UMP)</strong> de Google para solicitar tu <strong>consentimiento</strong> cuando la
+    normativa lo exige. Puedes revisar o retirar tu decisión en cualquier momento desde
+    <em>Ajustes → Opciones de privacidad</em> dentro de la app.</p>
+    <div class="callout">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 2.6 4.6 5.6v5.6c0 4.5 3.1 8.6 7.4 9.6 4.3-1 7.4-5.1 7.4-9.6V5.6L12 2.6Z"
+              stroke="#00c9a2" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="m8.6 12.1 2.3 2.3 4.5-4.6" stroke="#00c9a2" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p>Los anuncios son <strong>opcionales para el funcionamiento</strong>: si no hay conexión,
+      no das consentimiento o no hay inventario disponible, la app funciona con total normalidad
+      y simplemente no se muestra el banner (no bloquea ninguna función ni deja un hueco vacío).</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">8</span>Compartir con terceros</h2>
+    <p>No vendemos ni alquilamos datos, y <strong>no compartimos tus archivos ni tu información
+    personal con terceros</strong>. La única relación con un tercero es la publicidad: Google
+    AdMob trata los datos técnicos descritos en la sección 7 para servir el banner, siempre bajo
+    tu consentimiento cuando la ley lo exige. Si decides <em>compartir</em> o <em>abrir</em> un
     resultado, la propia app no lo envía: es el mecanismo estándar de Android
     (FileProvider) el que entrega el archivo a la aplicación que tú elijas. Esa aplicación
     se rige por su propia política de privacidad.</p>
   </section>
 
   <section class="card">
-    <h2><span class="n">8</span>Distribución en tiendas y repositorios</h2>
+    <h2><span class="n">9</span>Distribución en tiendas y repositorios</h2>
     <p>ParDocs se distribuye a través de <strong>Google Play</strong> (bajo la cuenta de
     publicación <em>Virginia Studios</em>) y como APK en <strong>GitHub Releases</strong>.
     Estas plataformas pueden tratar datos técnicos (por ejemplo, descargas o instalaciones)
@@ -252,25 +304,25 @@
   </section>
 
   <section class="card">
-    <h2><span class="n">9</span>Menores de edad</h2>
+    <h2><span class="n">10</span>Menores de edad</h2>
     <p>ParDocs no está dirigida específicamente a menores de 13 años y no recopila datos
     de ninguna persona, independientemente de su edad.</p>
   </section>
 
   <section class="card">
-    <h2><span class="n">10</span>Seguridad</h2>
-    <p>El procesamiento local y la ausencia de conexiones de red reducen el riesgo de
-    exposición: la información sensible de tus documentos nunca abandona tu dispositivo.
-    Te recomendamos mantener Android actualizado y proteger tu dispositivo con bloqueo de
-    pantalla.</p>
+    <h2><span class="n">11</span>Seguridad</h2>
+    <p>El procesamiento local reduce el riesgo de exposición: la información sensible de tus
+    documentos nunca abandona tu dispositivo. La única conexión de red de la app sirve para
+    cargar el banner publicitario y no envía el contenido de tus archivos. Te recomendamos
+    mantener Android actualizado y proteger tu dispositivo con bloqueo de pantalla.</p>
   </section>
 
   <section class="card">
-    <h2><span class="n">11</span>Cambios en esta política</h2>
+    <h2><span class="n">12</span>Cambios en esta política</h2>
     <p>Podemos actualizar esta política si cambian las funciones de la app o la normativa.
     Publicaremos siempre la versión vigente en esta misma dirección, con su fecha de
-    actualización. Si algún cambio implicara recopilación de datos (algo que ParDocs no hace
-    en la actualidad), lo anunciaremos de forma clara antes de aplicarlo.</p>
+    actualización. Si algún cambio implicara una nueva recopilación de datos por parte de la
+    app, lo anunciaremos de forma clara antes de aplicarlo.</p>
   </section>
 
   <section class="card accent">

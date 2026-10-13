@@ -30,8 +30,8 @@ android {
         applicationId = "com.pardocs.app"
         minSdk = 26
         targetSdk = 36
-        versionCode = 2
-        versionName = "1.0.0"
+        versionCode = 3
+        versionName = "2.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables { useSupportLibrary = true }
@@ -52,6 +52,9 @@ android {
         debug {
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
+            // AdMob: Google's official test App ID + test banner unit while debugging.
+            manifestPlaceholders["admobAppId"] = "ca-app-pub-3940256099942544~3347511713"
+            buildConfigField("String", "ADMOB_BANNER_UNIT_ID", "\"ca-app-pub-3940256099942544/9214589741\"")
         }
         release {
             isMinifyEnabled = false
@@ -60,6 +63,9 @@ android {
             if (hasReleaseKeystore) {
                 signingConfig = signingConfigs.getByName("release")
             }
+            // AdMob: real production App ID + banner unit for store builds.
+            manifestPlaceholders["admobAppId"] = "ca-app-pub-8687578459506310~5702322112"
+            buildConfigField("String", "ADMOB_BANNER_UNIT_ID", "\"ca-app-pub-8687578459506310/2239835232\"")
         }
     }
 
@@ -108,6 +114,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.documentfile)
@@ -116,6 +123,10 @@ dependencies {
 
     // Pure-Java PDF toolkit (no native libraries -> one universal APK).
     implementation(libs.pdfbox.android)
+
+    // Google AdMob: banner ads + user consent (UMP).
+    implementation(libs.play.services.ads)
+    implementation(libs.user.messaging.platform)
 
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.ui)

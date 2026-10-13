@@ -5,6 +5,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -35,35 +36,46 @@ import com.pardocs.app.tools.ToolCatalog
 import com.pardocs.app.tools.ToolCategory
 import com.pardocs.app.tools.ToolSpec
 import com.pardocs.app.ui.Routes
+import com.pardocs.app.ui.components.AnchoredAdaptiveBanner
 import com.pardocs.app.ui.components.ToolIconBox
 import com.pardocs.app.ui.theme.TextFaint
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
-    LazyVerticalGrid(
-        columns = GridCells.Fixed(2),
-        modifier = Modifier.fillMaxSize(),
-        contentPadding = androidx.compose.foundation.layout.PaddingValues(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 24.dp),
-        horizontalArrangement = Arrangement.spacedBy(12.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp),
-    ) {
-        item(span = { GridItemSpan(maxLineSpan) }) {
-            Header()
-        }
-        val categories = listOf(ToolCategory.PDF, ToolCategory.IMAGE, ToolCategory.DOCUMENT)
-        categories.forEach { category ->
+    Column(Modifier.fillMaxSize()) {
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(2),
+            modifier = Modifier.weight(1f),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 24.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
             item(span = { GridItemSpan(maxLineSpan) }) {
-                Spacer(Modifier.height(8.dp))
-                Text(
-                    category.label,
-                    style = MaterialTheme.typography.titleLarge,
-                    color = MaterialTheme.colorScheme.onBackground,
-                )
+                Header()
             }
-            items(ToolCatalog.byCategory(category), key = { it.id }) { tool ->
-                ToolCard(tool) { navController.navigate(Routes.tool(tool.id)) }
+            val categories = listOf(ToolCategory.PDF, ToolCategory.IMAGE, ToolCategory.DOCUMENT)
+            categories.forEach { category ->
+                item(span = { GridItemSpan(maxLineSpan) }) {
+                    Spacer(Modifier.height(8.dp))
+                    Text(
+                        category.label,
+                        style = MaterialTheme.typography.titleLarge,
+                        color = MaterialTheme.colorScheme.onBackground,
+                    )
+                }
+                items(ToolCatalog.byCategory(category), key = { it.id }) { tool ->
+                    ToolCard(tool) { navController.navigate(Routes.tool(tool.id)) }
+                }
             }
         }
+
+        // Discreet anchored adaptive banner, only on the main screen. It collapses
+        // to nothing when no ad is available, so it never covers tools or menus.
+        AnchoredAdaptiveBanner(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 8.dp),
+        )
     }
 }
 
